@@ -1,6 +1,7 @@
 from read import read_dataset
 import eda
 import eda_plot as ep
+import preprocess
 
 #step 1 reading the dataset
 df = read_dataset()
@@ -20,3 +21,12 @@ ep.plot_top_services(df)
 ep.plot_flag_distribution(df)
 ep.plot_src_bytes_distribution(df)
 ep.plot_correlation_heatmap(df)
+
+
+#step 4 preprocess
+X, y_binary, y_multi, scaler = preprocess.preprocess_data(df)
+print("preprocessing complete")
+
+
+
+
